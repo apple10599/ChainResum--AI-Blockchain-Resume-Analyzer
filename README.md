@@ -1,1 +1,1 @@
-# ChainResum--AI-Blockchain-Resume-Analyzer
+# ChainResume-AI-Blockchain-Resume-Analyzer
