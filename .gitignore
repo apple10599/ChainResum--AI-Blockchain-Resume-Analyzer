@@ -1,0 +1,18 @@
+# Python bytecode
+__pycache__/
+*.pyc
+*.pyo
+
+# Flask instance folder
+instance/
+
+# Virtual environments
+venv/
+.env
+
+# Uploads folder where resumes are stored
+uploads/
+
+# IDE/editor folders
+.vscode/
+.idea/
