@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Analyzer</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Resume Analyzer</h1>
+            <p>Upload your resume and get an instant evaluation.</p>
+        </header>
+        
+        <div class="upload-section">
+            <form action="/" method="POST" enctype="multipart/form-data">
+                <input type="file" name="resume" accept="application/pdf" required>
+                <div class="button-group">
+                    <button type="submit">Analyze Resume</button>
+                    <button type="button" class="reset-btn" onclick="window.location.href='/'">Reset</button>
+                </div>
+            </form>
+            
+        </div>
+
+        {% if score %}
+            <div class="results">
+                <h3>Your Resume Score: {{ score }}/100</h3>
+                <h4>Feedback:</h4>
+                <ul>
+                    {% for item in feedback_list %}
+                        <li>{{ item }}</li>
+                    {% endfor %}
+                </ul>
+                {% if success %}
+                    <p><strong>Score:</strong> {{ score }}</p>
+                    <p><strong>Feedback:</strong> {{ feedback }}</p>
+                    <p><em>Stored on Blockchain!</em></p>
+                {% endif %}
+
+            </div>
+        {% endif %}
+        
+        <footer>
+            <p>Created by chaitanya</p>
+        </footer>
+    </div>
+</body>
+</html>
