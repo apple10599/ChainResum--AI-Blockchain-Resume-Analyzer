@@ -1,1 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resume Analyzer</title>
+    <style>
+        body { font-family: sans-serif; text-align: center; padding: 50px; }
+        .container { max-width: 600px; margin: auto; }
+        .result { margin-top: 30px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>AI Resume Analyzer</h1>
+        <form method="POST" enctype="multipart/form-data">
+            <input type="file" name="resume" required><br><br>
+            <button type="submit">Analyze Resume</button>
+        </form>
+
+        {% if score %}
+            <div class="result">
+                <h2>Results for: {{ filename }}</h2>
+                <p><strong>Score:</strong> {{ score }}/100</p>
+                <p><strong>Feedback:</strong> {{ feedback }}</p>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
 
